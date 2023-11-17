@@ -202,9 +202,7 @@ header {
     border-top: 2px solid $heading-color;
     border-bottom: 2px solid transparent;
     &:after {
-        content: url(/images/lrg.svg); /* Unicode character for "plus" sign (+) */
-        font-size: 13px;
-        color: #333;
+        content: url('/images/lrg.svg'); /* Unicode character for "plus" sign (+) */
         float: right;
         margin-left: 5px;
       }
@@ -214,7 +212,7 @@ header {
     background-color: $bg-color;
     border-bottom: 2px solid $main-color;
     &:after {
-        content: url(/images/lrgclose.svg)!important; /* Unicode character for "minus" sign (x) */
+        content: url('/images/lrgclose.svg')!important; /* Unicode character for "minus" sign (x) */
       }
   }
   
