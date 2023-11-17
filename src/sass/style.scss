@@ -1,0 +1,343 @@
+/** base styles **/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+$bg-color: #fff;
+$heading-color: #333;
+$text-black: #333;
+$text-gray: #6E6A69;
+$main-color: #97C227;
+$active-text-color: #fff;
+$active-bg-color: #97C227;
+
+body {
+    min-height: 100vh;
+    background: $bg-color;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 66px;
+    letter-spacing: -3.03px;
+    color: $heading-color;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: $heading-color;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: $heading-color;
+}
+p {
+   color: $text-gray; 
+   font-size: 16px;
+   line-height: 20.8px;
+   font-weight: 400;
+   margin: 15px 0px 15px 0px;
+}
+
+hr {
+    border: 2px solid $main-color;
+}
+
+figcaption {
+    font-size: 11px;
+    line-height: 13.75px;
+    color: $text-gray;
+}
+
+.logo {
+    width: 139px;
+}
+
+/** main content **/
+.main-content {
+    min-height: calc(100vh - 40px);
+    padding-top: 140px;
+}
+
+.main-content .container {
+    margin-top: 140px;
+    max-width: 820px;
+    display: block;
+    margin: 0 auto;
+}
+
+.lead-text {
+    font-size: 21px;
+    line-height: 32px;
+    color: $text-gray;
+    font-weight: 400; 
+}
+
+.item-block {
+    margin: 40px 0px 40px 0px;
+}
+
+/** header styles **/
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $bg-color;
+    padding: 18px 2%;
+    transition: all .50s ease;
+    box-shadow: 0 10px 10px 0px rgba(0,0,0, 5%);
+    height: 60px;
+}
+
+.navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 360px;
+    height: 100vh;
+    background: $bg-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all .50s ease;
+    a {
+        display: block;
+        color: $text-black;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 5px 0;
+        margin: 0px auto;
+        transition: all .50s ease;
+    }
+    a:hover {
+        color: $bg-color;
+        color: $active-text-color;
+        transform: translateY(2px);
+    }
+    li {
+        height: 60px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid gray;
+    }
+    li:hover{
+        background: $active-bg-color;
+    }
+    li:hover a {
+        color: $active-text-color;
+    }
+    &.open {
+        right: 0%;
+    }
+}
+
+#menu-icon{
+    font-size: 50px;
+    color: #D8D8D8;
+    cursor: pointer;
+    z-index: 10001;
+    & :hover {
+        color: $main-color;
+    }
+}/** CLOSE neader/navbar styles **/
+
+
+/** graph image **/
+.nexxar-graph-desktop {
+    display: block;
+    margin: 24px auto;
+}
+
+/** open all accordion btn **/
+.nexxar-open-all-btn {
+    float: right;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid $heading-color;
+    text-align: center;
+    vertical-align: top;
+    padding: 10px 30px 10px 30px;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 23.8px;
+    color: $heading-color;
+    font-weight: 700;
+    margin-bottom: 20px;
+    &:hover {
+        background-color: $heading-color;  
+        color: $active-text-color;
+    }
+}
+
+/** accordion **/
+ .nexxar-accordion {
+    background-color: $bg-color;
+    color: $heading-color;
+    cursor: pointer;
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.4s;
+    font-weight: 700;
+    border-top: 2px solid $heading-color;
+    border-bottom: 2px solid transparent;
+    &:after {
+        content: url(/images/lrg.svg); /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: #333;
+        float: right;
+        margin-left: 5px;
+      }
+  }
+
+  .active {
+    background-color: $bg-color;
+    border-bottom: 2px solid $main-color;
+    &:after {
+        content: url(/images/lrgclose.svg)!important; /* Unicode character for "minus" sign (x) */
+      }
+  }
+  
+  .panel {
+    display: none;
+    &.show {
+        display: block;
+        transition: max-height 0.2s ease-out;
+    }
+  }
+
+
+/** overlay on menu icon click **/
+.overlay-container {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3,3,3,0.1);
+  }
+
+
+/** footer styles **/
+footer {
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $bg-color;
+    transition: all .50s ease;
+    height: 40px;
+    border-top: 1px solid $main-color;
+    height: 40px;
+}
+
+.navbar-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    transition: all .50s ease;
+    a {
+        color: $text-gray;
+        font-size: 16px;
+        line-height: 18.4px;
+        font-weight: 500;
+        padding: 5px 0;
+        margin: 0px 10px;
+        transition: all .50s ease;
+    }
+}
+
+.nexxar-copyright {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    transition: all .50s ease;
+    a {
+        color: $text-gray;
+        font-size: 16px;
+        line-height: 18.4px;
+        padding: 5px 0;
+        margin: 0px 5px;
+        transition: all .50s ease;
+    }
+}
+
+.nexxar-graph-mobile {
+    display: none;
+}
+
+  /** Tablet **/
+  @media only screen and (max-width: 768px) {
+    .main-content {
+        padding: 100px 15px 0px 15px;
+    }
+    .main-content .container {
+        max-width: 608px;
+    }
+    .nexxar-graph-desktop {
+        display: none;
+    }
+    .nexxar-graph-mobile {
+        display: block;
+        margin: 24px auto;
+    }
+  }
+
+  /** Mobile **/
+  @media only screen and (max-width: 360px) {
+    h1 {
+        font-size: 28px;
+        line-height: 33.6px;
+        letter-spacing: -1.31px;
+    }
+    h2 {
+        font-size: 24px;
+        line-height: 28.8px;
+    }
+    h3 {
+        font-size: 21px;
+        line-height: 25.2px;
+    }
+    footer {
+        height: fit-content;
+        display: block;
+    }
+    .navbar {
+        width: 100%;
+    }
+    .navbar-footer {
+        display: block;
+        width: 100%;
+        li{
+            padding: 10px 0px 10px 0px;
+        }  
+    } 
+    .nexxar-copyright {
+        width: 100%;
+        height: 40px;
+        border-top: 1px solid $main-color;
+        justify-content:center;
+        align-items:center;
+        padding: 15px 0px;
+    }
+  }
